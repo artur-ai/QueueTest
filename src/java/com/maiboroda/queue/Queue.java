@@ -1,4 +1,4 @@
-package maiboroda.com.queue;
+package com.maiboroda.queue;
 
 public interface Queue {
     void engueue(Object value);
