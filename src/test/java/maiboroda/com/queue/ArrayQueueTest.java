@@ -1,5 +1,6 @@
 package maiboroda.com.queue;
 
+import com.maiboroda.queue.ArrayQueue;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -96,6 +97,17 @@ public class ArrayQueueTest {
     public void testWillIlleagalStateExeptionWhenOnEmptyQueue(){
         ArrayQueue queue = new ArrayQueue();
         assertThrows(IllegalStateException.class, queue::dequeue);
+    }
+
+    @Test
+    public void testEngueueObject_ReturnString() {
+        ArrayQueue queue = new ArrayQueue();
+        assertEquals("[]", queue.toString());
+        queue.engueue("A");
+        assertEquals("[A]", queue.toString());
+
+        queue.engueue("B");
+        assertEquals("[A, B]", queue.toString());
     }
 
 

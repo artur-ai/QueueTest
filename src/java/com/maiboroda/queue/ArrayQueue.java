@@ -1,4 +1,4 @@
-package maiboroda.com.queue;
+package com.maiboroda.queue;
 
 public class ArrayQueue implements Queue {
     private Object array[];
@@ -60,6 +60,16 @@ public class ArrayQueue implements Queue {
 
     @Override
     public String toString() {
-        return "";
+        if(size == 0){
+            return "[]";
+        }
+        String result = "[";
+        for(int i = 0; i < size; i++){
+            result += array[i];
+            if (i < size - 1){
+                result += ", ";
+            }
+        }
+        return result +"]";
     }
 }
